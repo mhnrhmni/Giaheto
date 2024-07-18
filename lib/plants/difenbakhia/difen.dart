@@ -36,60 +36,63 @@ class Difen extends StatelessWidget {
               onAdClicked: (ad) {},
             ),
           ),
-          Wrap(
-            children: [
-              _buildButton(
-                'lib/image/sun.png',
-                'نــور دهـــی',
-                () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => DifenSun()),
-                ),
-              ),
-              _buildButton(
-                'lib/image/drop.png',
-                'آبــــیاری',
-                () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => DifenDrop()),
-                ),
-              ),
-              _buildButton(
-                'lib/image/soil.png',
-                'خـــاک و کــود',
-                () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => DifenSoil()),
-                ),
-              ),
-              _buildButton(
-                'lib/image/content.png',
-                'مشـــخصات',
-                () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => DifenInfo()),
-                ),
-              ),
-              _buildButton(
-                'lib/image/camera.png',
-                'گالـــری تــصاویر',
-                () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => DifenCam()),
-                ),
-              ),
-              _buildButton(
-                'lib/image/shop.png',
-                'خــــــریــد',
-                () {
-                  Navigator.push(
+          Align(
+            alignment: Alignment.topCenter,
+            child: Wrap(
+              children: [
+                _buildButton(
+                  'lib/image/sun.png',
+                  'نــور دهـــی',
+                  () => Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => DifenShop()),
-                  );
-                  showShopAlertDialog2(context);
-                },
-              ),
-            ],
+                    MaterialPageRoute(builder: (context) => DifenSun()),
+                  ),
+                ),
+                _buildButton(
+                  'lib/image/drop.png',
+                  'آبــــیاری',
+                  () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DifenDrop()),
+                  ),
+                ),
+                _buildButton(
+                  'lib/image/soil.png',
+                  'خـــاک و کــود',
+                  () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DifenSoil()),
+                  ),
+                ),
+                _buildButton(
+                  'lib/image/content.png',
+                  'مشـــخصات',
+                  () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DifenInfo()),
+                  ),
+                ),
+                _buildButton(
+                  'lib/image/camera.png',
+                  'گالـــری تــصاویر',
+                  () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DifenCam()),
+                  ),
+                ),
+                _buildButton(
+                  'lib/image/shop.png',
+                  'خــــــریــد',
+                  () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => DifenShop()),
+                    );
+                    showShopAlertDialog2(context);
+                  },
+                ),
+              ],
+            ),
           ),
           Align(
             alignment: Alignment.bottomCenter,

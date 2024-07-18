@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:giaheto/home/home.dart';
+import 'package:giaheto/identifier/iden.dart';
 import 'package:giaheto/plants/plant.dart';
 
 void main() {
@@ -41,9 +43,9 @@ class MyApp extends StatelessWidget {
               backgroundColor: Color.fromARGB(255, 0, 149, 109),
             ),
             bottomNavigationBar: menu(),
-            body: const TabBarView(
+            body: TabBarView(
                 physics: NeverScrollableScrollPhysics(),
-                children: <Widget>[Category()]),
+                children: <Widget>[Identifier(),HomePage(),Category()]),
           ),
         ),
         drawer: Drawer(
@@ -102,7 +104,7 @@ Widget menu() {
                 style: TextStyle(
                     fontFamily: 'aseman', color: Colors.amber, fontSize: 20),
                 duration: Duration(milliseconds: 400),
-                child: Text('حساب کاربری')),
+                child: Text('تشخیص گـیاه ')),
           ),
           Tab(
             icon: Padding(

@@ -24,15 +24,56 @@ class Category extends StatefulWidget {
 
 class _CategoryState extends State<Category> {
   final List<Plant> plants = [
-    Plant(name: 'سانســـوریا', imagePath: 'lib/image/snsvria.png', page:  const Sansveria(key: null,),),
-    Plant(name: 'دیفن باخیا', imagePath: 'lib/image/dfnbkhia.png', page: const Difen(key: null,),),
-    Plant(name: 'فیکوس', imagePath: 'lib/image/ficus.png', page: const Ficus(key: null,),),
-    Plant(name: 'آگلونما', imagePath: 'lib/image/Aglaonema.png', page: const Aglonema(key: null,),),
-    Plant(name: 'آگلونما', imagePath: 'lib/image/Aglaonema.png', page: const Sansveria(key: null,),),
-    Plant(name: 'آگلونما', imagePath: 'lib/image/Aglaonema.png', page: const Sansveria(key: null,),),
-    Plant(name: 'آگلونما', imagePath: 'lib/image/Aglaonema.png', page: const Sansveria(key: null,),),
+    Plant(
+      name: 'سانســـوریا',
+      imagePath: 'lib/image/snsvria.png',
+      page: const Sansveria(
+        key: null,
+      ),
+    ),
+    Plant(
+      name: 'دیفن باخیا',
+      imagePath: 'lib/image/dfnbkhia.png',
+      page: const Difen(
+        key: null,
+      ),
+    ),
+    Plant(
+      name: 'فیکوس',
+      imagePath: 'lib/image/ficus.png',
+      page: const Ficus(
+        key: null,
+      ),
+    ),
+    Plant(
+      name: 'آگلونما',
+      imagePath: 'lib/image/Aglaonema.png',
+      page: const Aglonema(
+        key: null,
+      ),
+    ),
+    Plant(
+      name: 'آگلونما',
+      imagePath: 'lib/image/Aglaonema.png',
+      page: const Sansveria(
+        key: null,
+      ),
+    ),
+    Plant(
+      name: 'آگلونما',
+      imagePath: 'lib/image/Aglaonema.png',
+      page: const Sansveria(
+        key: null,
+      ),
+    ),
+    Plant(
+      name: 'آگلونما',
+      imagePath: 'lib/image/Aglaonema.png',
+      page: const Sansveria(
+        key: null,
+      ),
+    ),
 
-    
     // اضافه کردن سایر گیاهان به این لیست
   ];
 
@@ -47,23 +88,27 @@ class _CategoryState extends State<Category> {
       padding: const EdgeInsets.all(10),
       child: TextButton(
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => plant.page));
-          // Assuming showShopAlertDialog is intended for showing dialog on plant card click
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => plant.page),
+          );
         },
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.amber,
-            borderRadius: BorderRadius.circular(20),
-          ),
+              color: Colors.amber, borderRadius: BorderRadius.circular(20)),
           child: Column(
             children: [
-              Image.asset(plant.imagePath, width: 150, height: 150),
+              Image.asset(
+                plant.imagePath,
+                width: 150,
+                height: 150,
+              ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Text(
                   plant.name,
                   style: const TextStyle(
-                      fontSize: 22,
+                      fontSize: 25,
                       color: Color.fromARGB(255, 0, 0, 0),
                       fontWeight: FontWeight.w900,
                       fontFamily: 'aseman'),
@@ -95,15 +140,11 @@ class _CategoryState extends State<Category> {
                 ),
               ),
             ),
-            GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 3 / 4,
+            Align(
+              alignment: Alignment.topCenter,
+              child: Wrap(
+                children: plants.map((plant) => buildPlantCard(plant)).toList(),
               ),
-              itemCount: plants.length,
-              itemBuilder: (context, index) => buildPlantCard(plants[index]),
             ),
             SafeArea(
               child: Align(
