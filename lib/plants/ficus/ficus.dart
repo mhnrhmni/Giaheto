@@ -1,14 +1,15 @@
 import 'package:adivery/adivery_ads.dart';
 import 'package:flutter/material.dart';
-import 'package:giaheto/plants/sansveria/sun/sun.dart';
-import 'package:giaheto/plants/sansveria/drop/drop.dart';
-import 'package:giaheto/plants/sansveria/soil/soil.dart';
-import 'package:giaheto/plants/sansveria/info/info.dart';
-import 'package:giaheto/plants/sansveria/camera/camera.dart';
-import 'package:giaheto/plants/sansveria/shop/shop.dart';
+import 'package:giaheto/plants/ficus/camera/camera.dart';
+import 'package:giaheto/plants/ficus/drop/drop.dart';
+import 'package:giaheto/plants/ficus/info/info.dart';
+import 'package:giaheto/plants/ficus/shop/shop.dart';
+import 'package:giaheto/plants/ficus/soil/soil.dart';
+import 'package:giaheto/plants/ficus/sun/sun.dart';
 
-class Sansveria extends StatelessWidget {
-  const Sansveria({required super.key});
+
+class Ficus extends StatelessWidget {
+  const Ficus({required super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class Sansveria extends StatelessWidget {
         title: const Align(
           alignment: Alignment.topCenter,
           child: Text(
-            'سـانســوریا',
+            'فـــیکــوس',
             style: TextStyle(fontFamily: 'aseman', fontSize: 30),
           ),
         ),
@@ -42,7 +43,7 @@ class Sansveria extends StatelessWidget {
                 'نــور دهـــی',
                 () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SnsvriaSun()),
+                  MaterialPageRoute(builder: (context) => FicusSun()),
                 ),
               ),
               _buildButton(
@@ -50,7 +51,7 @@ class Sansveria extends StatelessWidget {
                 'آبــــیاری',
                 () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SnsvriaDrop()),
+                  MaterialPageRoute(builder: (context) => FicusDrop()),
                 ),
               ),
               _buildButton(
@@ -58,7 +59,7 @@ class Sansveria extends StatelessWidget {
                 'خـــاک و کــود',
                 () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SnsvriaSoil()),
+                  MaterialPageRoute(builder: (context) => FicusSoil()),
                 ),
               ),
               _buildButton(
@@ -66,7 +67,7 @@ class Sansveria extends StatelessWidget {
                 'مشـــخصات',
                 () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SnsvriaContent()),
+                  MaterialPageRoute(builder: (context) => FicusInfo()),
                 ),
               ),
               _buildButton(
@@ -74,7 +75,7 @@ class Sansveria extends StatelessWidget {
                 'گالـــری تــصاویر',
                 () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SnsvriaCamera()),
+                  MaterialPageRoute(builder: (context) => FicusCam()),
                 ),
               ),
               _buildButton(
@@ -83,7 +84,7 @@ class Sansveria extends StatelessWidget {
                 () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SnsvriaSupport()),
+                    MaterialPageRoute(builder: (context) => FicusShop()),
                   );
                   showShopAlertDialog2(context);
                 },

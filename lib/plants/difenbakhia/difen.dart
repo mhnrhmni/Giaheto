@@ -1,23 +1,24 @@
 import 'package:adivery/adivery_ads.dart';
 import 'package:flutter/material.dart';
-import 'package:giaheto/plants/sansveria/sun/sun.dart';
-import 'package:giaheto/plants/sansveria/drop/drop.dart';
-import 'package:giaheto/plants/sansveria/soil/soil.dart';
-import 'package:giaheto/plants/sansveria/info/info.dart';
-import 'package:giaheto/plants/sansveria/camera/camera.dart';
-import 'package:giaheto/plants/sansveria/shop/shop.dart';
+import 'package:giaheto/plants/difenbakhia/camera/camera.dart';
+import 'package:giaheto/plants/difenbakhia/drop/drop.dart';
+import 'package:giaheto/plants/difenbakhia/info/info.dart';
+import 'package:giaheto/plants/difenbakhia/shop/shop.dart';
+import 'package:giaheto/plants/difenbakhia/soil/soil.dart';
+import 'package:giaheto/plants/difenbakhia/sun/sun.dart';
 
-class Sansveria extends StatelessWidget {
-  const Sansveria({required super.key});
+
+class Difen extends StatelessWidget {
+  const Difen({required super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Align(
-          alignment: Alignment.topCenter,
+          alignment: Alignment.center,          
           child: Text(
-            'سـانســوریا',
+            'دیــفن بــاخیــا',
             style: TextStyle(fontFamily: 'aseman', fontSize: 30),
           ),
         ),
@@ -42,7 +43,7 @@ class Sansveria extends StatelessWidget {
                 'نــور دهـــی',
                 () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SnsvriaSun()),
+                  MaterialPageRoute(builder: (context) => DifenSun()),
                 ),
               ),
               _buildButton(
@@ -50,7 +51,7 @@ class Sansveria extends StatelessWidget {
                 'آبــــیاری',
                 () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SnsvriaDrop()),
+                  MaterialPageRoute(builder: (context) => DifenDrop()),
                 ),
               ),
               _buildButton(
@@ -58,7 +59,7 @@ class Sansveria extends StatelessWidget {
                 'خـــاک و کــود',
                 () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SnsvriaSoil()),
+                  MaterialPageRoute(builder: (context) => DifenSoil()),
                 ),
               ),
               _buildButton(
@@ -66,7 +67,7 @@ class Sansveria extends StatelessWidget {
                 'مشـــخصات',
                 () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SnsvriaContent()),
+                  MaterialPageRoute(builder: (context) => DifenInfo()),
                 ),
               ),
               _buildButton(
@@ -74,7 +75,7 @@ class Sansveria extends StatelessWidget {
                 'گالـــری تــصاویر',
                 () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SnsvriaCamera()),
+                  MaterialPageRoute(builder: (context) => DifenCam()),
                 ),
               ),
               _buildButton(
@@ -83,7 +84,7 @@ class Sansveria extends StatelessWidget {
                 () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SnsvriaSupport()),
+                    MaterialPageRoute(builder: (context) => DifenShop()),
                   );
                   showShopAlertDialog2(context);
                 },

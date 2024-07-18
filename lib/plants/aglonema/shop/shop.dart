@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class SnsvriaSupport extends StatefulWidget {
-  const SnsvriaSupport({super.key});
+class AgloShop extends StatefulWidget {
+  const AgloShop({super.key});
 
   @override
-  State<SnsvriaSupport> createState() => _SnsvriaSupportState();
+  State<AgloShop> createState() => _AgloShopState();
 }
 
-class _SnsvriaSupportState extends State<SnsvriaSupport> {
+class _AgloShopState extends State<AgloShop> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

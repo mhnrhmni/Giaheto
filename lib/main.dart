@@ -5,9 +5,10 @@ void main() {
   runApp(const MyApp());
 }
 
+final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 1, 178, 158)),
       ),
       home: Scaffold(
+        key: _scaffoldKey,
         body: DefaultTabController(
           length: 3,
           initialIndex: 1,
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
               title: const Align(
                   alignment: Alignment.center,
                   child: Text(
-                    'گل و گیاه شایان',
+                    'گیـــاهــتو',
                     style: TextStyle(fontFamily: 'aseman', fontSize: 30),
                   )),
               leading: Builder(
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
                   return IconButton(
                     icon: const Icon(Icons.menu),
                     onPressed: () {
-                      Scaffold.of(context).openDrawer();
+                      _scaffoldKey.currentState?.openDrawer();
                     },
                   );
                 },

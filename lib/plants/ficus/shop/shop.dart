@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class SnsvriaSupport extends StatefulWidget {
-  const SnsvriaSupport({super.key});
+class FicusShop extends StatefulWidget {
+  const FicusShop({super.key});
 
   @override
-  State<SnsvriaSupport> createState() => _SnsvriaSupportState();
+  State<FicusShop> createState() => _FicusShopState();
 }
 
-class _SnsvriaSupportState extends State<SnsvriaSupport> {
+class _FicusShopState extends State<FicusShop> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -75,7 +75,7 @@ class _WebViewApp2State extends State<WebViewApp2> {
         title: const Align(
           alignment: AlignmentDirectional(0, 0),
           child: Text(
-            'خــریـد سـانســوریا',
+            'خــریـد فــیکــوس',
             style: TextStyle(fontFamily: 'aseman', fontSize: 30),
           ),
         ),

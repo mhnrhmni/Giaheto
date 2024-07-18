@@ -2,14 +2,14 @@ import 'package:adivery/adivery_ads.dart';
 import 'package:flutter/material.dart';
 import 'package:gallery_saver/gallery_saver.dart';
 
-class SnsvriaCamera extends StatefulWidget {
-  const SnsvriaCamera({super.key});
+class FicusCam extends StatefulWidget {
+  const FicusCam({super.key});
 
   @override
-  State<SnsvriaCamera> createState() => _SnsvriaCameraState();
+  State<FicusCam> createState() => _FicusCamState();
 }
 
-class _SnsvriaCameraState extends State<SnsvriaCamera> {
+class _FicusCamState extends State<FicusCam> {
   // لیستی از عکس‌ها برای نمایش و دانلود
   final List<String> images = [
     'lib/image/snsvria/shot1.jpg',
