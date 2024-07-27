@@ -33,49 +33,68 @@ class _HomePageState extends State<HomePage> {
   List<Widget> searchResults = [];
 
   final Map<String, Widget> plantsPages = {
-    'سانسوریا': Sansveria(key: null,),
-    'دیفن باخیا' : Difen(key: null,),
-    'سینگونیوم ' : Difen(key: null,),
-    'فیکوس': Ficus(key: null,),
+    'سانسوریا': Sansveria(
+      key: null,
+    ),
+    'دیفن باخیا': Difen(
+      key: null,
+    ),
+    'سینگونیوم ': Difen(
+      key: null,
+    ),
+    'فیکوس': Ficus(
+      key: null,
+    ),
     // اضافه کردن سایر گیاهان و صفحات مربوطه در اینجا
   };
 
-void performSearch(String query) {
-  // اگر رشته جستجو خالی است، لیست نتایج را خالی کن و از متد خارج شو
-  if (query.isEmpty) {
-    setState(() {
-      searchResults = [];
-    });
-    return;
-  }
-
-  List<Widget> results = [];
-  // جستجو برای گیاهانی که نام آن‌ها شامل رشته جستجو می‌شود
-  plantsPages.forEach((name, page) {
-    if (name.contains(query.toLowerCase())) {
-      // افزودن آیتم به نتایج جستجو
-      results.add(Container(
-        margin: EdgeInsets.all(8),
-        decoration: BoxDecoration(
-          color: Colors.amber,
-          border: Border.all(color: Colors.black),
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: ListTile(
-          title: Align(alignment: Alignment.centerRight,child: Text(name, style: const TextStyle(fontFamily: 'aseman', fontSize:25))),
-          onTap: () {
-            // ناوبری به صفحه گیاه انتخاب شده
-            Navigator.push(context, MaterialPageRoute(builder: (context) => page));
-          },
-        ),
-      ));
+  void performSearch(String query) {
+    // اگر رشته جستجو خالی است، لیست نتایج را خالی کن و از متد خارج شو
+    if (query.isEmpty) {
+      setState(() {
+        searchResults = [];
+      });
+      return;
     }
-  });
 
-  setState(() {
-    searchResults = results;
-  });
-}
+    List<Widget> results = [];
+    // جستجو برای گیاهانی که نام آن‌ها شامل رشته جستجو می‌شود
+    plantsPages.forEach((name, page) {
+      if (name.contains(query.toLowerCase())) {
+        // افزودن آیتم به نتایج جستجو
+        results.add(Container(
+          margin: EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: Colors.amber,
+            border: Border.all(color: Colors.black),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: ListTile(
+            title: Align(
+              alignment: Alignment.centerRight,
+              child: Row(
+                children: [
+                  Text(name,
+                      style:
+                          const TextStyle(fontFamily: 'aseman', fontSize: 25)),
+                  SizedBox(width: 10),
+                ],
+              ),
+            ),
+            onTap: () {
+              // ناوبری به صفحه گیاه انتخاب شده
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => page));
+            },
+          ),
+        ));
+      }
+    });
+
+    setState(() {
+      searchResults = results;
+    });
+  }
 
   String currentTime = '';
   String greeting = '';
@@ -83,7 +102,7 @@ void performSearch(String query) {
   @override
   void initState() {
     super.initState();
-    Timer.periodic(const Duration(milliseconds: 50), (Timer timer) {
+    Timer.periodic(const Duration(milliseconds: 100), (Timer timer) {
       setState(() {
         final now = DateTime.now();
         final timeFormat = DateFormat('HH:mm');
@@ -111,11 +130,12 @@ void performSearch(String query) {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(15.0),
+                  padding: const EdgeInsets.all(12.0),
                   child: Container(
                     decoration: BoxDecoration(
                       color: const Color.fromARGB(255, 254, 255, 255),
                       borderRadius: BorderRadius.circular(10),
+                      border: Border.all(style: BorderStyle.solid,width: 3)
                     ),
                     padding: const EdgeInsets.all(16),
                     child: Column(
@@ -149,6 +169,7 @@ void performSearch(String query) {
                   decoration: BoxDecoration(
                     color: const Color.fromARGB(255, 254, 255, 255),
                     borderRadius: BorderRadius.circular(10),
+                      border: Border.all(style: BorderStyle.solid,width: 3)
                   ),
                   padding: const EdgeInsets.all(16),
                   child: Row(
@@ -178,12 +199,27 @@ void performSearch(String query) {
               ],
             ),
           ),
-          Container(
-            padding: EdgeInsets.all(16),
-            child: TextField(
-              onChanged: performSearch,
-              decoration: InputDecoration(
-                labelText: 'جستجوی گیاه...',
+          Padding(
+            padding: const EdgeInsets.only(left: 15.0,right: 15),
+            child: Container(
+              margin: EdgeInsets.all(16),
+              child: TextField(
+                onChanged: (value) {
+                  performSearch(value);
+                },
+                decoration: InputDecoration(
+                  label: Text('... گــیاهـتو پیــدا کن'),
+                  floatingLabelAlignment: FloatingLabelAlignment.center,
+                  labelStyle: TextStyle(fontFamily: 'aseman', fontSize: 20),
+                  enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(100)),
+                  hintText: 'جــستــجو',
+                  hintStyle: TextStyle(fontFamily: 'aseman', fontSize: 20),
+                  alignLabelWithHint: true,
+                  prefixIcon: Icon(Icons.search),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
               ),
             ),
           ),

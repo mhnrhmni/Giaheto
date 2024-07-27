@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:giaheto/home/home.dart';
-import 'package:giaheto/identifier/iden.dart';
+import 'package:giaheto/identifier/learn.dart';
 import 'package:giaheto/plants/plant.dart';
 
 void main() {
@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
             bottomNavigationBar: menu(),
             body: TabBarView(
                 physics: NeverScrollableScrollPhysics(),
-                children: <Widget>[Identifier(),HomePage(),Category()]),
+                children: <Widget>[Learn(),HomePage(),Category()]),
           ),
         ),
         drawer: Drawer(
@@ -98,18 +98,18 @@ Widget menu() {
           Tab(
             icon: Padding(
               padding: EdgeInsets.all(8),
-              child: Icon(Icons.supervised_user_circle),
+              child: Icon(Icons.school_sharp),
             ),
             child: AnimatedDefaultTextStyle(
                 style: TextStyle(
                     fontFamily: 'aseman', color: Colors.amber, fontSize: 20),
                 duration: Duration(milliseconds: 400),
-                child: Text('تشخیص گـیاه ')),
+                child: Text('آمـــوزش')),
           ),
           Tab(
             icon: Padding(
               padding: EdgeInsets.all(8),
-              child: Icon(Icons.home_outlined),
+              child: Icon(Icons.home),
             ),
             child: AnimatedDefaultTextStyle(
                 style: TextStyle(
